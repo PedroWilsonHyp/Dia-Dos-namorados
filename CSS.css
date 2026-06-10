@@ -1,0 +1,766 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400&display=swap');
+
+/* =========================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background-color: #1a0008; 
+    color: #fff; 
+    font-family: 'Poppins', sans-serif; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    overflow: hidden; 
+}
+
+/* =========================================
+   2. CONTAINERS PRINCIPAIS
+   ========================================= */
+.container { 
+    text-align: center; 
+    z-index: 10; 
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 40px; 
+    border-radius: 20px; 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 0 20px rgba(255, 0, 100, 0.3); 
+    max-width: 500px; 
+    width: 90%; 
+}
+
+.letter-container { 
+    max-width: 700px; 
+    max-height: 90vh; 
+    overflow-y: auto; /* Adicionei rolagem para caber tudo na tela */
+}
+
+/* =========================================
+   3. TIPOGRAFIA E TEXTOS
+   ========================================= */
+h1 { 
+    font-family: 'Dancing Script', cursive; 
+    color: #ff4d79; 
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+    min-height: 60px; 
+}
+
+.subtitle { 
+    font-size: 1.1rem; 
+    margin-bottom: 20px; 
+    color: #ffb3c6; 
+}
+
+.letter-text { 
+    text-align: left; 
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+    margin-top: 20px; 
+    margin-bottom: 50px; /* ATUALIZADO: Mais espaço no final do texto */
+}
+
+.letter-text p { 
+    margin-bottom: 15px; 
+}
+
+/* =========================================
+   4. BOTÕES E INTERAÇÕES
+   ========================================= */
+button { 
+    background-color: #ff4d79; 
+    color: white; 
+    border: none; 
+    padding: 12px 25px; 
+    font-size: 1.1rem; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    transition: transform 0.2s, background-color 0.2s; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+button:hover { 
+    background-color: #ff1a53; 
+    transform: scale(1.05); 
+}
+
+.next-btn { 
+    display: inline-block; 
+    margin-top: 20px; 
+    background-color: #fff; 
+    color: #ff4d79; 
+    text-decoration: none; 
+    padding: 10px 25px; 
+    border-radius: 30px; 
+    font-size: 1.1rem; 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); 
+}
+
+.next-btn:hover { 
+    background-color: #ffb3c6; 
+    color: #1a0008; 
+    transform: scale(1.05); 
+}
+
+.buttons-area { 
+    margin-top: 30px; 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    align-items: center; 
+}
+
+.bad-btn { 
+    background-color: #555; 
+    color: white; 
+    transition: 0.1s; 
+    z-index: 9999; 
+}
+
+/* =========================================
+   5. ELEMENTOS DA PÁGINA INICIAL
+   ========================================= */
+.music-player { 
+    margin-bottom: 30px; 
+}
+
+.counter-container { 
+    background: rgba(255, 77, 121, 0.1); 
+    border: 1px solid rgba(255, 77, 121, 0.3); 
+    border-radius: 15px; 
+    padding: 15px; 
+    margin-bottom: 25px; 
+}
+
+.counter-container p { 
+    margin-bottom: 15px; 
+    color: #ffb3c6; 
+    font-weight: bold; 
+    font-family: 'Dancing Script', cursive; 
+    font-size: 1.5rem; 
+}
+
+.counter-boxes { 
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+}
+
+.box { 
+    display: flex; 
+    flex-direction: column; 
+    font-size: 0.8rem; 
+    color: #fff; 
+}
+
+.box span { 
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: #ff4d79; 
+}
+
+/* =========================================
+   6. MÁQUINA DE MOTIVOS E QUIZ
+   ========================================= */
+.reasons-machine { 
+    margin-top: 50px; /* ATUALIZADO: Afasta a Máquina de Motivos */
+    margin-bottom: 50px; /* ATUALIZADO: Afasta a Máquina de Motivos */
+    padding: 10px; 
+}
+
+.reason-text { 
+    margin-top: 15px; 
+    font-size: 1.2rem; 
+    font-style: italic; 
+    color: #ffb3c6; 
+    min-height: 60px; 
+    transition: opacity 0.3s ease; 
+}
+
+.quiz-section { 
+    background: rgba(0, 0, 0, 0.2); 
+    border-radius: 15px; 
+    padding: 30px 20px; /* ATUALIZADO: Mais espaço por dentro */
+    margin: 60px 0; /* ATUALIZADO: Dobramos o espaço por fora */
+    border: 1px solid rgba(255, 77, 121, 0.3); 
+}
+
+.quiz-section h2 { 
+    font-family: 'Dancing Script', cursive; 
+    color: #ff4d79; 
+    font-size: 2.2rem; 
+    margin-bottom: 15px; 
+}
+
+.quiz-question-text { 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+}
+
+.quiz-options-container { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.quiz-option-btn { 
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #fff; 
+    border: 1px solid #ff4d79; 
+    padding: 10px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: 0.2s; 
+    text-align: left; 
+    font-size: 1rem; 
+}
+
+.quiz-option-btn:hover { 
+    background-color: rgba(255, 77, 121, 0.3); 
+}
+
+.quiz-option-btn.correct { 
+    background-color: #28a745 !important; 
+    border-color: #28a745 !important; 
+    color: white; 
+}
+
+.quiz-option-btn.wrong { 
+    background-color: #dc3545 !important; 
+    border-color: #dc3545 !important; 
+    color: white; 
+}
+
+.quiz-result-text { 
+    font-size: 1.3rem; 
+    font-weight: bold; 
+    color: #ffb3c6; 
+    margin-top: 15px; 
+}
+
+/* =========================================
+   7. UTILITÁRIOS E ANIMAÇÕES
+   ========================================= */
+.hidden { 
+    display: none !important; 
+}
+
+#hidden-message { 
+    margin-top: 20px; 
+    font-size: 1.5rem; 
+    font-family: 'Dancing Script', cursive; 
+    color: #ff4d79; 
+    animation: fadeIn 1s ease-in; 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(-10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.heart { 
+    position: absolute; 
+    bottom: -100px; 
+    font-size: 20px; 
+    color: #ff4d79; 
+    animation: floatUp linear infinite; 
+    opacity: 0.6; 
+    z-index: 1; 
+}
+
+@keyframes floatUp { 
+    to { transform: translateY(-120vh) rotate(360deg); } 
+}
+
+.floating-img { 
+    position: absolute; 
+    bottom: -250px; 
+    width: 130px; 
+    height: 130px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    opacity: 0.25; 
+    animation: floatUpImage linear infinite; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+    z-index: 0; 
+    border: 2px solid #ff4d79; 
+}
+
+@keyframes floatUpImage { 
+    from { transform: translateY(0) rotate(-15deg); } 
+    to { transform: translateY(-130vh) rotate(15deg); } 
+}
+/* =========================================
+   8. PORTA-RETRATOS POLAROID (O FIX DEFINITIVO)
+   ========================================= */
+.polaroid-section {
+    margin: 40px 0;
+}
+
+.polaroid-frame {
+    width: 100%;
+    max-width: 280px; /* Tamanho exato e seguro para não quebrar a tela */
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05); /* Fundo de vidro transparente */
+    border: 3px solid rgba(255, 77, 121, 0.3); /* Bordinha rosa */
+    border-radius: 10px;
+    padding: 10px; /* Dá um respiro entre a borda e a foto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.polaroid-frame img {
+    width: 100% !important;
+    height: 280px !important; /* Força a ficar um quadrado perfeito */
+    object-fit: cover !important; /* A MAGIA: Corta o excesso da foto sem amassar ou esticar ela! */
+    border-radius: 5px;
+    display: block;
+}
+
+.polaroid-caption {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    font-size: 1.2rem;
+    color: #ffb3c6;
+    text-align: center;
+    font-weight: bold;
+}
+
+.polaroid-controls {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mini-btn {
+    background: rgba(255, 77, 121, 0.2);
+    border: 2px solid #ff4d79;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini-btn:hover {
+    background: #ff4d79;
+    transform: scale(1.1);
+}
+/* =========================================
+   9. LINHA DO TEMPO (DATAS NA ESQUERDA)
+   ========================================= */
+.timeline-section {
+    margin: 50px 0;
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 77, 121, 0.3);
+    overflow: hidden; /* Evita que o texto vaze da caixa */
+}
+
+.timeline-section h2 {
+    font-family: 'Dancing Script', cursive; 
+    color: #ff4d79; 
+    font-size: 2.2rem; 
+    margin-bottom: 5px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 450px;
+    margin: 30px auto 0 auto;
+    padding-left: 100px; /* Abre a "coluna" vazia na esquerda para as datas */
+    text-align: left;
+}
+
+/* A Linha Vertical */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px; /* Posiciona a linha exatamente depois do espaço das datas */
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: rgba(255, 77, 121, 0.5);
+    border-radius: 5px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+    padding-left: 25px; /* Dá um respiro entre a linha e a caixa de texto */
+}
+
+/* NOVO: A data flutuando na esquerda */
+.timeline-date {
+    position: absolute;
+    left: -100px; /* Joga a data lá pro espaço vazio na esquerda */
+    top: 15px; /* Alinha na mesma altura da bolinha */
+    width: 85px; /* Limita o tamanho para não bater na linha */
+    text-align: right; /* Encosta o texto perto da linha */
+    font-size: 0.95rem;
+    color: #ffb3c6;
+    font-weight: bold;
+}
+
+/* A bolinha marcadora */
+.timeline-dot {
+    position: absolute;
+    left: -8px; /* Centraliza a bolinha perfeitamente em cima da linha */
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    background: #1a0008;
+    border: 3px solid #ff4d79;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 77, 121, 0.5);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 4px solid #ff4d79;
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-content h3 {
+    color: #ffb3c6;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   11. CÁPSULA DO TEMPO (NOSSO FUTURO)
+   ========================================= */
+.capsula-section {
+    margin: 50px 0;
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 77, 121, 0.3);
+}
+
+.capsula-section h2 {
+    font-family: 'Dancing Script', cursive; 
+    color: #ff4d79; 
+    font-size: 2.2rem; 
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.capsula-section .subtitle {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.wishlist {
+    display: flex; flex-direction: column; gap: 15px;
+    max-width: 450px; margin: 0 auto;
+}
+
+.wish-item {
+    display: flex; align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px; border-radius: 10px;
+    cursor: pointer; transition: all 0.3s ease;
+}
+
+.wish-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.wish-checkbox { display: none; }
+
+.custom-check {
+    width: 24px; height: 24px;
+    border: 2px solid #ff4d79; border-radius: 50%;
+    margin-right: 15px; display: flex;
+    justify-content: center; align-items: center;
+    transition: all 0.3s ease; flex-shrink: 0;
+}
+
+.wish-text {
+    color: #fff; font-size: 1.1rem;
+    transition: all 0.3s ease; font-family: 'Poppins', sans-serif;
+}
+
+.wish-checkbox:checked + .custom-check {
+    background-color: #ff4d79; box-shadow: 0 0 10px #ff4d79;
+}
+
+.wish-checkbox:checked + .custom-check::after {
+    content: '✔'; color: #fff; font-weight: bold;
+}
+
+.wish-checkbox:checked ~ .wish-text {
+    color: #ffb3c6; text-decoration: line-through; opacity: 0.6;
+}
+
+/* =========================================
+   12. O MEGA PORTAL E OS EASTER EGGS GIGANTES
+   ========================================= */
+
+/* O Portal de Energia Cósmica */
+.mega-portal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 260px;
+    height: 420px;
+    border-radius: 50%;
+    /* Mistura de cores estilo vórtice do print */
+    background: radial-gradient(circle, transparent 20%, rgba(147, 51, 234, 0.3) 60%, rgba(6, 182, 212, 0.2) 80%);
+    border: 8px solid #a855f7;
+    /* Brilho neon intenso */
+    box-shadow: 
+        0 0 35px #a855f7,
+        inset 0 0 45px #06b6d4,
+        0 0 70px #ec4899;
+    z-index: 999998;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0);
+    animation: abrirPortal 3s ease-in-out forwards;
+}
+
+/* O Elemento que salta do portal (Gato ou Avião) */
+.mega-sujeito {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 11rem; /* Tamanho massivo e realista */
+    z-index: 999999;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0);
+    /* Sombra projetada para criar profundidade 3D em relação ao fundo */
+    filter: drop-shadow(0 25px 20px rgba(0, 0, 0, 0.65));
+    animation: puloEpico 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Animação do Portal: Expande girando e colapsa no final */
+@keyframes abrirPortal {
+    0% { 
+        transform: translate(-50%, -50%) scale(0) rotate(0deg); 
+        opacity: 0; 
+    }
+    15% { 
+        transform: translate(-50%, -50%) scale(1) rotate(180deg); 
+        opacity: 1; 
+        filter: hue-rotate(0deg); 
+    }
+    80% { 
+        transform: translate(-50%, -50%) scale(1) rotate(720deg); 
+        opacity: 1; 
+        filter: hue-rotate(60deg); 
+    }
+    100% { 
+        transform: translate(-50%, -50%) scale(0) rotate(1080deg); 
+        opacity: 0; 
+    }
+}
+
+/* Animação do Pulo: Surge do centro (fundo), avança na tela e cai em arco */
+@keyframes puloEpico {
+    0% { 
+        transform: translate(-50%, -50%) scale(0); 
+        opacity: 0; 
+    }
+    18% { 
+        transform: translate(-50%, -50%) scale(0.4); 
+        opacity: 1; 
+    }
+    50% { 
+        /* Ápice do salto: desloca para a direita, sobe e rotaciona levemente */
+        transform: translate(18vw, -30vh) scale(1.4) rotate(12deg); 
+        opacity: 1; 
+    }
+    100% { 
+        /* Queda livre para fora da borda inferior direita do monitor */
+        transform: translate(55vw, 100vh) scale(1.8) rotate(35deg); 
+        opacity: 0; 
+    }
+}
+
+
+
+/* =========================================
+   13. CONVITE DO JANTAR (BLOCO COMPLETO E CORRIGIDO)
+   ========================================= */
+.convite-section {
+    margin: 50px 0; 
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 77, 121, 0.3);
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Protege a seção inteira */
+}
+
+.convite-section h2 {
+    font-family: 'Dancing Script', cursive; 
+    color: #ff4d79; 
+    font-size: 2.2rem; 
+    margin-bottom: 5px;
+}
+
+.envelope-container {
+    position: relative;
+    margin: 200px auto 80px auto; /* Pista de decolagem de 200px no topo */
+    width: 300px; 
+    height: 200px;
+}
+
+.hidden-checkbox { display: none; }
+
+.envelope-wrapper {
+    cursor: pointer; 
+    display: block;
+    position: relative; 
+    width: 100%; 
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* O Fundo do Envelope */
+.envelope {
+    position: relative; 
+    width: 100%; 
+    height: 100%;
+    background: #4a0e17; 
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+/* A Frente do Envelope */
+.front {
+    position: absolute; 
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100%;
+    background: #ff4d79;
+    clip-path: polygon(0 0, 50% 60%, 100% 0, 100% 100%, 0 100%);
+    border-radius: 0 0 10px 10px;
+    z-index: 3;
+}
+
+/* A Aba que abre */
+.flap {
+    position: absolute; 
+    top: 0; left: 0;
+    width: 100%; 
+    height: 60%;
+    background: #e6004c;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out, z-index 0.1s 0.2s;
+    z-index: 4;
+}
+
+/* A Carta em si */
+.letter {
+    position: absolute;
+    bottom: 5px; 
+    left: 10px; 
+    right: 10px;
+    height: 180px; 
+    background: #fff;
+    z-index: 2; 
+    transition: transform 0.7s ease-in-out 0.2s, height 0.7s ease-in-out 0.2s;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    overflow: hidden; /* Corta a imagem excedente nas bordas arredondadas */
+}
+
+/* A Imagem do Cardápio */
+.letter img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher 100% da carta sem rebarbas */
+    object-position: top; /* Foca na parte superior ao iniciar */
+    display: block; /* Remove margens invisíveis do navegador */
+}
+
+/* =========================================
+   AÇÕES AO CLICAR (CHECKED)
+   ========================================= */
+
+/* 1. Aba abre para trás */
+.hidden-checkbox:checked ~ .envelope-wrapper .flap {
+    transform: rotateX(180deg);
+    z-index: 1; 
+}
+
+/* 2. O envelope inteiro desce um pouco */
+.hidden-checkbox:checked ~ .envelope-wrapper {
+    transform: translateY(50px);
+}
+
+/* 3. A carta cresce, sobe e passa por cima de tudo */
+.hidden-checkbox:checked ~ .envelope-wrapper .letter {
+    height: 440px; /* Altura ideal para a proporção do cardápio */
+    transform: translateY(-220px) scale(1.15); /* Sobe e amplia */
+    z-index: 99; 
+}
+
+
+/* =========================================
+   14. ADAPTAÇÃO PARA CELULAR (RESPONSIVIDADE)
+   ========================================= */
+@media (max-width: 600px) {
+    /* Ajusta o tamanho dos títulos */
+    h1, h2 { font-size: 1.8rem !important; }
+    
+    /* Dá um respiro nas laterais do contêiner principal */
+    .letter-container { 
+        padding: 20px 15px; 
+        margin: 10px;
+    }
+    
+    /* Ajusta o tamanho das caixinhas da cápsula do tempo */
+    .wish-item { padding: 10px 15px; }
+    .wish-text { font-size: 0.95rem; }
+    
+    /* Garante que o envelope não quebre a tela */
+    .envelope-container { 
+        width: 100%; 
+        max-width: 280px; 
+        margin-top: 150px; 
+    }
+    
+    /* Reduz um pouco o tamanho da carta ao abrir no celular */
+    .hidden-checkbox:checked ~ .envelope-wrapper .letter {
+        height: 380px;
+        transform: translateY(-200px) scale(1.05);
+    }
+}
