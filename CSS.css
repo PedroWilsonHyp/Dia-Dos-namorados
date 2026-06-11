@@ -767,4 +767,26 @@ button:hover {
     
     /* Ajusta a máquina de motivos */
     #reason-display { font-size: 1.1rem; }
+
+    /* =====================================
+       NOVO: CORREÇÃO DA LINHA DO TEMPO 
+       ===================================== */
+    .timeline-item {
+        display: flex;
+        flex-direction: column; /* Joga a data para cima da caixa */
+        align-items: flex-start;
+        padding-left: 25px; /* Reduz o espaço da linha esquerda */
+    }
+
+    .timeline-date {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 10px; /* Dá um espacinho entre a data e a caixa */
+        padding-right: 0;
+    }
+
+    .timeline-content {
+        width: 100%;
+        max-width: 100%;
+    }
 }
