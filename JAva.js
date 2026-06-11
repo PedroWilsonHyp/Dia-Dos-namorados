@@ -294,3 +294,32 @@ function dispararMundoMistico(conteudo) {
         if (sujeito) sujeito.remove();
     }, 3000);
 }
+
+/* =========================================
+   EFEITO MÁQUINA DE ESCREVER
+   ========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const elemento = document.getElementById("texto-maquina");
+    
+    if (elemento) {
+        // Pega o texto que você escreveu no HTML
+        const texto = elemento.innerText; 
+        
+        // Limpa a tela imediatamente antes de ela ver
+        elemento.innerHTML = ""; 
+        
+        let i = 0;
+        function maquinaDeEscrever() {
+            if (i < texto.length) {
+                // Adiciona letra por letra. Se for uma quebra de linha (\n), ele cria um <br> do HTML
+                elemento.innerHTML += texto.charAt(i) === '\n' ? '<br>' : texto.charAt(i);
+                i++;
+                // Velocidade da digitação: 40 milissegundos por letra
+                setTimeout(maquinaDeEscrever, 40); 
+            }
+        }
+        
+        // Espera 1 segundo após a página carregar para começar o show
+        setTimeout(maquinaDeEscrever, 1000);
+    }
+});
