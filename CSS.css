@@ -768,25 +768,28 @@ button:hover {
     /* Ajusta a máquina de motivos */
     #reason-display { font-size: 1.1rem; }
 
-    /* =====================================
-       NOVO: CORREÇÃO DA LINHA DO TEMPO 
+ /* =====================================
+       CORREÇÃO BRUTAL DA LINHA DO TEMPO 
        ===================================== */
+    .timeline {
+        padding: 0 10px !important;
+    }
     .timeline-item {
-        display: flex;
-        flex-direction: column; /* Joga a data para cima da caixa */
-        align-items: flex-start;
-        padding-left: 25px; /* Reduz o espaço da linha esquerda */
+        display: block !important; /* Mata o efeito de ficar lado a lado */
+        width: 100% !important;
+        padding-left: 20px !important; /* Espaço só pra linha passar à esquerda */
+        box-sizing: border-box !important;
     }
-
     .timeline-date {
-        width: 100%;
-        text-align: left;
-        margin-bottom: 10px; /* Dá um espacinho entre a data e a caixa */
-        padding-right: 0;
+        position: relative !important;
+        width: 100% !important;
+        text-align: left !important;
+        margin-bottom: 10px !important;
+        padding: 0 !important;
     }
-
     .timeline-content {
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
     }
-}
