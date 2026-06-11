@@ -768,28 +768,58 @@ button:hover {
     /* Ajusta a máquina de motivos */
     #reason-display { font-size: 1.1rem; }
 
- /* =====================================
-       CORREÇÃO BRUTAL DA LINHA DO TEMPO 
+ /* /* =====================================
+       OPÇÃO NUCLEAR: LINHA DO TEMPO CELULAR
        ===================================== */
     .timeline {
-        padding: 0 10px !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
+    
+    /* Joga a linha vertical colada no canto esquerdo */
+    .timeline::before { 
+        left: 0 !important; 
+    }
+    
     .timeline-item {
-        display: block !important; /* Mata o efeito de ficar lado a lado */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
         width: 100% !important;
-        padding-left: 20px !important; /* Espaço só pra linha passar à esquerda */
-        box-sizing: border-box !important;
+        padding-left: 20px !important; /* Espacinho só pra caixa não engolir a linha */
+        margin-bottom: 25px !important;
+        /* Zera os empurrões do computador */
+        left: 0 !important; 
+        right: 0 !important;
+        transform: none !important;
     }
+    
     .timeline-date {
         position: relative !important;
         width: 100% !important;
         text-align: left !important;
-        margin-bottom: 10px !important;
         padding: 0 !important;
+        margin-bottom: 8px !important;
+        /* Zera os empurrões do computador */
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        transform: none !important;
     }
+    
+    /* Alinha a bolinha exatamente em cima da linha na esquerda */
+    .timeline-dot {
+        left: -6px !important; 
+    }
+    
     .timeline-content {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
+        padding: 15px !important;
         box-sizing: border-box !important;
+        /* Zera os empurrões do computador */
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
     }
