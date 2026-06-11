@@ -38,7 +38,7 @@ body {
 .letter-container { 
     max-width: 700px; 
     max-height: 90vh; 
-    overflow-y: auto; /* Adicionei rolagem para caber tudo na tela */
+    overflow-y: auto; 
 }
 
 /* =========================================
@@ -63,7 +63,7 @@ h1 {
     font-size: 1.1rem; 
     line-height: 1.6; 
     margin-top: 20px; 
-    margin-bottom: 50px; /* ATUALIZADO: Mais espaço no final do texto */
+    margin-bottom: 50px; 
 }
 
 .letter-text p { 
@@ -172,8 +172,8 @@ button:hover {
    6. MÁQUINA DE MOTIVOS E QUIZ
    ========================================= */
 .reasons-machine { 
-    margin-top: 50px; /* ATUALIZADO: Afasta a Máquina de Motivos */
-    margin-bottom: 50px; /* ATUALIZADO: Afasta a Máquina de Motivos */
+    margin-top: 50px; 
+    margin-bottom: 50px; 
     padding: 10px; 
 }
 
@@ -189,8 +189,8 @@ button:hover {
 .quiz-section { 
     background: rgba(0, 0, 0, 0.2); 
     border-radius: 15px; 
-    padding: 30px 20px; /* ATUALIZADO: Mais espaço por dentro */
-    margin: 60px 0; /* ATUALIZADO: Dobramos o espaço por fora */
+    padding: 30px 20px; 
+    margin: 60px 0; 
     border: 1px solid rgba(255, 77, 121, 0.3); 
 }
 
@@ -251,9 +251,7 @@ button:hover {
 /* =========================================
    7. UTILITÁRIOS E ANIMAÇÕES
    ========================================= */
-.hidden { 
-    display: none !important; 
-}
+.hidden { display: none !important; }
 
 #hidden-message { 
     margin-top: 20px; 
@@ -300,28 +298,27 @@ button:hover {
     from { transform: translateY(0) rotate(-15deg); } 
     to { transform: translateY(-130vh) rotate(15deg); } 
 }
+
 /* =========================================
-   8. PORTA-RETRATOS POLAROID (O FIX DEFINITIVO)
+   8. PORTA-RETRATOS POLAROID
    ========================================= */
-.polaroid-section {
-    margin: 40px 0;
-}
+.polaroid-section { margin: 40px 0; }
 
 .polaroid-frame {
     width: 100%;
-    max-width: 280px; /* Tamanho exato e seguro para não quebrar a tela */
+    max-width: 280px; 
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05); /* Fundo de vidro transparente */
-    border: 3px solid rgba(255, 77, 121, 0.3); /* Bordinha rosa */
+    background: rgba(255, 255, 255, 0.05); 
+    border: 3px solid rgba(255, 77, 121, 0.3); 
     border-radius: 10px;
-    padding: 10px; /* Dá um respiro entre a borda e a foto */
+    padding: 10px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .polaroid-frame img {
     width: 100% !important;
-    height: 280px !important; /* Força a ficar um quadrado perfeito */
-    object-fit: cover !important; /* A MAGIA: Corta o excesso da foto sem amassar ou esticar ela! */
+    height: 280px !important; 
+    object-fit: cover !important; 
     border-radius: 5px;
     display: block;
 }
@@ -361,8 +358,9 @@ button:hover {
     background: #ff4d79;
     transform: scale(1.1);
 }
+
 /* =========================================
-   9. LINHA DO TEMPO (DATAS NA ESQUERDA)
+   9. LINHA DO TEMPO (FLEXBOX FLUIDO E CORRIGIDO)
    ========================================= */
 .timeline-section {
     margin: 50px 0;
@@ -370,7 +368,7 @@ button:hover {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     border: 1px solid rgba(255, 77, 121, 0.3);
-    overflow: hidden; /* Evita que o texto vaze da caixa */
+    overflow: hidden; 
 }
 
 .timeline-section h2 {
@@ -382,67 +380,66 @@ button:hover {
 
 .timeline {
     position: relative;
-    max-width: 450px;
-    margin: 30px auto 0 auto;
-    padding-left: 100px; /* Abre a "coluna" vazia na esquerda para as datas */
-    text-align: left;
+    max-width: 100%;
+    margin: 40px 0;
+    padding: 10px 0;
 }
 
-/* A Linha Vertical */
-.timeline::before {
+/* A linha reta vertical */
+.timeline::after {
     content: '';
     position: absolute;
-    left: 100px; /* Posiciona a linha exatamente depois do espaço das datas */
+    width: 4px;
+    background-color: #ff4d79;
     top: 0;
     bottom: 0;
-    width: 3px;
-    background: rgba(255, 77, 121, 0.5);
-    border-radius: 5px;
+    left: 20%; 
+    margin-left: -2px;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 35px;
-    padding-left: 25px; /* Dá um respiro entre a linha e a caixa de texto */
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 40px;
+    z-index: 1;
 }
 
-/* NOVO: A data flutuando na esquerda */
+/* A data no PC */
 .timeline-date {
-    position: absolute;
-    left: -100px; /* Joga a data lá pro espaço vazio na esquerda */
-    top: 15px; /* Alinha na mesma altura da bolinha */
-    width: 85px; /* Limita o tamanho para não bater na linha */
-    text-align: right; /* Encosta o texto perto da linha */
-    font-size: 0.95rem;
-    color: #ffb3c6;
+    width: 20%;
+    padding-right: 25px;
+    text-align: right;
     font-weight: bold;
+    color: #ffb3c6;
+    padding-top: 15px; 
+    box-sizing: border-box;
 }
 
-/* A bolinha marcadora */
+/* A bolinha na linha */
 .timeline-dot {
-    position: absolute;
-    left: -8px; /* Centraliza a bolinha perfeitamente em cima da linha */
-    top: 15px;
-    width: 18px;
-    height: 18px;
-    background: #1a0008;
-    border: 3px solid #ff4d79;
+    width: 16px;
+    height: 16px;
+    background-color: #1a0008;
+    border: 4px solid #ff4d79;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 77, 121, 0.5);
+    position: absolute;
+    left: 20%;
+    margin-left: -10px;
+    top: 15px;
     z-index: 2;
 }
 
+/* A caixa de texto no PC */
 .timeline-content {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px 20px;
-    border-radius: 10px;
+    width: 75%;
+    padding: 20px;
+    background: rgba(255, 77, 121, 0.1); 
     border-left: 4px solid #ff4d79;
-    transition: transform 0.3s ease;
-}
-
-.timeline-content:hover {
-    transform: translateX(5px);
-    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-left: 30px; 
+    box-sizing: border-box;
 }
 
 .timeline-content h3 {
@@ -457,7 +454,6 @@ button:hover {
     line-height: 1.5;
     margin-bottom: 0;
 }
-
 
 /* =========================================
    11. CÁPSULA DO TEMPO (NOSSO FUTURO)
@@ -530,91 +526,45 @@ button:hover {
 /* =========================================
    12. O MEGA PORTAL E OS EASTER EGGS GIGANTES
    ========================================= */
-
-/* O Portal de Energia Cósmica */
 .mega-portal {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 260px;
-    height: 420px;
+    top: 50%; left: 50%;
+    width: 260px; height: 420px;
     border-radius: 50%;
-    /* Mistura de cores estilo vórtice do print */
     background: radial-gradient(circle, transparent 20%, rgba(147, 51, 234, 0.3) 60%, rgba(6, 182, 212, 0.2) 80%);
     border: 8px solid #a855f7;
-    /* Brilho neon intenso */
-    box-shadow: 
-        0 0 35px #a855f7,
-        inset 0 0 45px #06b6d4,
-        0 0 70px #ec4899;
-    z-index: 999998;
-    pointer-events: none;
+    box-shadow: 0 0 35px #a855f7, inset 0 0 45px #06b6d4, 0 0 70px #ec4899;
+    z-index: 999998; pointer-events: none;
     transform: translate(-50%, -50%) scale(0);
     animation: abrirPortal 3s ease-in-out forwards;
 }
 
-/* O Elemento que salta do portal (Gato ou Avião) */
 .mega-sujeito {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    font-size: 11rem; /* Tamanho massivo e realista */
-    z-index: 999999;
-    pointer-events: none;
+    top: 50%; left: 50%;
+    font-size: 11rem; 
+    z-index: 999999; pointer-events: none;
     transform: translate(-50%, -50%) scale(0);
-    /* Sombra projetada para criar profundidade 3D em relação ao fundo */
     filter: drop-shadow(0 25px 20px rgba(0, 0, 0, 0.65));
     animation: puloEpico 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* Animação do Portal: Expande girando e colapsa no final */
 @keyframes abrirPortal {
-    0% { 
-        transform: translate(-50%, -50%) scale(0) rotate(0deg); 
-        opacity: 0; 
-    }
-    15% { 
-        transform: translate(-50%, -50%) scale(1) rotate(180deg); 
-        opacity: 1; 
-        filter: hue-rotate(0deg); 
-    }
-    80% { 
-        transform: translate(-50%, -50%) scale(1) rotate(720deg); 
-        opacity: 1; 
-        filter: hue-rotate(60deg); 
-    }
-    100% { 
-        transform: translate(-50%, -50%) scale(0) rotate(1080deg); 
-        opacity: 0; 
-    }
+    0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 0; }
+    15% { transform: translate(-50%, -50%) scale(1) rotate(180deg); opacity: 1; filter: hue-rotate(0deg); }
+    80% { transform: translate(-50%, -50%) scale(1) rotate(720deg); opacity: 1; filter: hue-rotate(60deg); }
+    100% { transform: translate(-50%, -50%) scale(0) rotate(1080deg); opacity: 0; }
 }
 
-/* Animação do Pulo: Surge do centro (fundo), avança na tela e cai em arco */
 @keyframes puloEpico {
-    0% { 
-        transform: translate(-50%, -50%) scale(0); 
-        opacity: 0; 
-    }
-    18% { 
-        transform: translate(-50%, -50%) scale(0.4); 
-        opacity: 1; 
-    }
-    50% { 
-        /* Ápice do salto: desloca para a direita, sobe e rotaciona levemente */
-        transform: translate(18vw, -30vh) scale(1.4) rotate(12deg); 
-        opacity: 1; 
-    }
-    100% { 
-        /* Queda livre para fora da borda inferior direita do monitor */
-        transform: translate(55vw, 100vh) scale(1.8) rotate(35deg); 
-        opacity: 0; 
-    }
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    18% { transform: translate(-50%, -50%) scale(0.4); opacity: 1; }
+    50% { transform: translate(18vw, -30vh) scale(1.4) rotate(12deg); opacity: 1; }
+    100% { transform: translate(55vw, 100vh) scale(1.8) rotate(35deg); opacity: 0; }
 }
-
-
 
 /* =========================================
-   13. CONVITE DO JANTAR (BLOCO COMPLETO E CORRIGIDO)
+   13. CONVITE DO JANTAR
    ========================================= */
 .convite-section {
     margin: 50px 0; 
@@ -624,7 +574,7 @@ button:hover {
     border: 1px solid rgba(255, 77, 121, 0.3);
     text-align: center;
     position: relative;
-    z-index: 10; /* Protege a seção inteira */
+    z-index: 10; 
 }
 
 .convite-section h2 {
@@ -636,7 +586,7 @@ button:hover {
 
 .envelope-container {
     position: relative;
-    margin: 200px auto 80px auto; /* Pista de decolagem de 200px no topo */
+    margin: 200px auto 80px auto; 
     width: 300px; 
     height: 200px;
 }
@@ -652,7 +602,6 @@ button:hover {
     transition: transform 0.5s ease-in-out;
 }
 
-/* O Fundo do Envelope */
 .envelope {
     position: relative; 
     width: 100%; 
@@ -662,7 +611,6 @@ button:hover {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5);
 }
 
-/* A Frente do Envelope */
 .front {
     position: absolute; 
     top: 0; left: 0;
@@ -674,7 +622,6 @@ button:hover {
     z-index: 3;
 }
 
-/* A Aba que abre */
 .flap {
     position: absolute; 
     top: 0; left: 0;
@@ -687,7 +634,6 @@ button:hover {
     z-index: 4;
 }
 
-/* A Carta em si */
 .letter {
     position: absolute;
     bottom: 5px; 
@@ -699,127 +645,85 @@ button:hover {
     transition: transform 0.7s ease-in-out 0.2s, height 0.7s ease-in-out 0.2s;
     box-shadow: 0 5px 25px rgba(0,0,0,0.4);
     border-radius: 5px;
-    overflow: hidden; /* Corta a imagem excedente nas bordas arredondadas */
+    overflow: hidden; 
 }
 
-/* A Imagem do Cardápio */
 .letter img {
     width: 100%; 
     height: 100%;
-    object-fit: cover; /* Faz a foto preencher 100% da carta sem rebarbas */
-    object-position: top; /* Foca na parte superior ao iniciar */
-    display: block; /* Remove margens invisíveis do navegador */
+    object-fit: cover; 
+    object-position: top; 
+    display: block; 
 }
 
-/* =========================================
-   AÇÕES AO CLICAR (CHECKED)
-   ========================================= */
-
-/* 1. Aba abre para trás */
 .hidden-checkbox:checked ~ .envelope-wrapper .flap {
     transform: rotateX(180deg);
     z-index: 1; 
 }
 
-/* 2. O envelope inteiro desce um pouco */
 .hidden-checkbox:checked ~ .envelope-wrapper {
     transform: translateY(50px);
 }
 
-/* 3. A carta cresce, sobe e passa por cima de tudo */
 .hidden-checkbox:checked ~ .envelope-wrapper .letter {
-    height: 440px; /* Altura ideal para a proporção do cardápio */
-    transform: translateY(-220px) scale(1.15); /* Sobe e amplia */
+    height: 440px; 
+    transform: translateY(-220px) scale(1.15); 
     z-index: 99; 
 }
-
 
 /* =========================================
    14. ADAPTAÇÃO PARA CELULAR (RESPONSIVIDADE)
    ========================================= */
 @media (max-width: 600px) {
-    /* Diminui os títulos para não quebrarem a tela */
     h1 { font-size: 1.8rem !important; }
     h2 { font-size: 1.6rem !important; }
     
-    /* Dá um respiro nas laterais do contêiner principal da carta */
     .letter-container { 
         padding: 20px 15px; 
         margin: 10px;
     }
     
-    /* Ajusta a cápsula do tempo */
     .wish-item { padding: 10px 15px; }
     .wish-text { font-size: 0.95rem; }
     
-    /* Ajusta a largura do Convite (Envelope) */
     .envelope-container { 
         width: 100%; 
         max-width: 280px; 
         margin-top: 150px; 
     }
     
-    /* Reduz o zoom do cardápio para caber na tela do celular */
     .hidden-checkbox:checked ~ .envelope-wrapper .letter {
         height: 380px;
         transform: translateY(-200px) scale(1.05);
     }
     
-    /* Ajusta a máquina de motivos */
     #reason-display { font-size: 1.1rem; }
 
- /* /* =====================================
-       OPÇÃO NUCLEAR: LINHA DO TEMPO CELULAR
+    /* =====================================
+       A MÁGICA DA LINHA DO TEMPO NO CELULAR
        ===================================== */
-    .timeline {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
+    /* 1. Joga a linha reta pro cantinho esquerdo */
+    .timeline::after { left: 20px; }
     
-    /* Joga a linha vertical colada no canto esquerdo */
-    .timeline::before { 
-        left: 0 !important; 
-    }
+    /* 2. Muda a estrutura: data em cima do texto */
+    .timeline-item { flex-direction: column; }
     
-    .timeline-item {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        width: 100% !important;
-        padding-left: 20px !important; /* Espacinho só pra caixa não engolir a linha */
-        margin-bottom: 25px !important;
-        /* Zera os empurrões do computador */
-        left: 0 !important; 
-        right: 0 !important;
-        transform: none !important;
-    }
-    
+    /* 3. A data agora ocupa a tela toda e vai pra esquerda */
     .timeline-date {
-        position: relative !important;
-        width: 100% !important;
-        text-align: left !important;
-        padding: 0 !important;
-        margin-bottom: 8px !important;
-        /* Zera os empurrões do computador */
-        left: 0 !important;
-        right: 0 !important;
-        top: 0 !important;
-        transform: none !important;
+        width: 100%;
+        text-align: left;
+        padding-left: 45px; 
+        padding-bottom: 10px;
+        padding-top: 12px;
     }
     
-    /* Alinha a bolinha exatamente em cima da linha na esquerda */
-    .timeline-dot {
-        left: -6px !important; 
-    }
+    /* 4. A bolinha vai pro cantinho com a linha */
+    .timeline-dot { left: 20px; }
     
+    /* 5. A caixa ganha espaço e usa toda a direita */
     .timeline-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 15px !important;
-        box-sizing: border-box !important;
-        /* Zera os empurrões do computador */
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
+        width: calc(100% - 45px); 
+        margin-left: 45px;
+        padding: 15px;
     }
+}
