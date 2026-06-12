@@ -157,21 +157,63 @@ button:hover {
     font-size: 1.5rem; 
 }
 
-/* =====================================
-       AJUSTE DO CONTADOR NO CELULAR
-       ===================================== */
-    .counter-boxes {
-        flex-wrap: wrap; /* Permite que os itens quebrem a linha */
-        gap: 15px 0; /* Espaço entre a linha de cima e a de baixo */
-    }
-    
-    .box {
-        width: 50%; /* Faz ficar dois itens por linha (2x2) */
-    }
-    
-    .box span {
-        font-size: 2rem !important; /* Reduz um pouquinho o tamanho do número */
-    }
+/* =========================================
+   REFORMULAÇÃO COMPLETA DO CONTADOR
+   (AGORA VAI FICAR LINDO E ALINHADO)
+   ========================================= */
+
+/* O contêiner principal do contador */
+.counter-container {
+    background: rgba(255, 77, 121, 0.05); /* Fundo sutil rosinha */
+    border: 1px solid rgba(255, 77, 121, 0.3); /* Bordinha rosa translúcida */
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 25px; /* Espaço por dentro */
+    max-width: 450px; /* Limita a largura no PC */
+    margin: 25px auto 40px auto; /* Centraliza na página e dá espaço */
+    text-align: center; /* Centraliza o título */
+    box-shadow: 0 5px 15px rgba(255, 77, 121, 0.2); /* Sombra suave */
+}
+
+/* O título "Construindo nossa história..." */
+.counter-container p {
+    margin-bottom: 25px; /* Espaço antes das caixas */
+    color: #ffb3c6; /* Cor rosa claro */
+    font-weight: 400; /* Peso da fonte */
+    font-size: 1.1rem; /* Tamanho da fonte */
+    font-family: 'Poppins', sans-serif; /* Mesma fonte do site */
+}
+
+/* O Grid que organiza as 4 caixas (PERFEITO PARA 2x2) */
+.counter-boxes {
+    display: grid !important; /* Muda de flex pra grid! */
+    grid-template-columns: repeat(2, 1fr) !important; /* Força 2 colunas de tamanho igual */
+    gap: 20px !important; /* Espaço idêntico entre as caixas */
+}
+
+/* O design de cada caixinha individual */
+.box {
+    display: flex !important;
+    flex-direction: column !important; /* Número em cima, palavra embaixo */
+    align-items: center !important; /* Centraliza tudo */
+    justify-content: center !important; /* Centraliza tudo verticalmente */
+    background: rgba(255, 255, 255, 0.02); /* Fundo de "vidro" sutil */
+    padding: 15px 10px; /* Espaço interno */
+    border-radius: 10px; /* Bordas arredondadas da caixa */
+    border: 1px solid rgba(255, 77, 121, 0.2); /* Bordinha sutil */
+    color: #ffb3c6; /* Cor da palavra (Dias, Horas, etc.) */
+    font-size: 0.9rem; /* Tamanho da palavra */
+}
+
+/* O design do número grande e rosa */
+.box span {
+    font-size: 2.8rem !important; /* Tamanho massivo e elegante */
+    font-weight: bold !important; /* Peso bold */
+    color: #ff4d79 !important; /* O rosa principal do site */
+    display: block !important; /* Garante que o número ocupa a linha toda */
+    line-height: 1 !important; /* Alinhamento vertical perfeito */
+    margin-bottom: 5px !important; /* Espaço antes da palavra */
+    font-family: 'Poppins', sans-serif !important; /* Mantém a fonte */
+}
 
 /* =========================================
    6. MÁQUINA DE MOTIVOS E QUIZ
