@@ -149,12 +149,12 @@ const perguntasQuiz = [
     {
         pergunta: "Qual foi o nosso primeiro filme assistido juntos?",
         opcoes: ["Your Name", "Harry Potter", "Senhor dos Anéis", "Invocação do Mal"],
-        correta: 1 
+        correta: 0 
     },
     {
-        pergunta: "Quem é mais provável de dormir no meio de um filme?",
-        opcoes: ["Eu", "Você", "Nós dois capotamos", "Nenhum, a gente 😈"],
-        correta: 3 
+        pergunta: "Quem ama mais o outro ?",
+        opcoes: ["Eu", "Você", "Nós dois nos igualmente :)"],
+        correta: 2
     }
 ];
 
