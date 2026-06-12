@@ -55,21 +55,38 @@ if (imageContainer) { setInterval(createFloatingImage, 4000); }
 
 
 // =========================================
-// 5. CONTADOR DE TEMPO
-// =========================================
-const dataDeInicio = new Date(2023, 5, 12); 
-function atualizarContador() {
-    const diasEl = document.getElementById("days");
-    if (!diasEl) return; 
-    const agora = new Date(); const diferenca = agora - dataDeInicio;
-    diasEl.innerText = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
-    document.getElementById("minutes").innerText = Math.floor((diferenca / 1000 / 60) % 60);
-    document.getElementById("seconds").innerText = Math.floor((diferenca / 1000) % 60);
-}
-setInterval(atualizarContador, 1000); atualizarContador();
+    // 2. CONTADOR DE TEMPO (AJUSTE DE DATA)
+    // =========================================
+    function atualizarContador() {
+        // AQUI VOCÊ MUDA A DATA! 
+        // Formato: 'ANO-MES-DIA T 00:00:00'
+        // Para 12 de Junho de 2024:
+        const dataInicio = new Date('2024-06-12T00:00:00'); 
+        
+        const agora = new Date();
+        const diferenca = agora - dataInicio;
 
+        if (diferenca < 0) return;
 
+        const d = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diferenca / 1000 / 60) % 60);
+        const s = Math.floor((diferenca / 1000) % 60);
+
+        if (document.getElementById('days')) {
+            document.getElementById('days').innerText = d;
+            document.getElementById('hours').innerText = h;
+            document.getElementById('minutes').innerText = m;
+            document.getElementById('seconds').innerText = s;
+        } else if (document.getElementById('dias')) {
+            document.getElementById('dias').innerText = d;
+            document.getElementById('horas').innerText = h;
+            document.getElementById('minutos').innerText = m;
+            document.getElementById('segundos').innerText = s;
+        }
+    }
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
 // =========================================
 // 6. BOTÃO FUJÃO
 // =========================================
