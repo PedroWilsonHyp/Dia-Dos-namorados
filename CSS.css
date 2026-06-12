@@ -52,6 +52,14 @@ h1 {
     min-height: 60px; 
 }
 
+h2 { 
+    font-family: 'Dancing Script', cursive; 
+    color: #ff4d79; 
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+    min-height: 60px; 
+}
+
 .subtitle { 
     font-size: 1.1rem; 
     margin-bottom: 20px; 
@@ -458,12 +466,18 @@ button:hover {
 /* =========================================
    11. CÁPSULA DO TEMPO (NOSSO FUTURO)
    ========================================= */
+
+
 .capsula-section {
+
+    
     margin: 50px 0;
     padding: 30px 20px;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     border: 1px solid rgba(255, 77, 121, 0.3);
+
+    
 }
 
 .capsula-section h2 {
